@@ -4,9 +4,33 @@
         <title>Rock Paper Scissors</title>
         <meta charset="utf-8">
         <link href="./css/general.css" rel="stylesheet">
-        <script src="./js/general.js"></script>
+        <script src="./js/general.js" defer></script>
     </head>
     <body>
+        <div class="title">ROCK PAPER SCISSORS</div>
+        <h1 class="instruction centerText">Chosse your weapon</h1>
+        <h2 class="outcome centerText">First to 5 points wins the game</h2>
+        <div class="scoreDisplay">
+            <div class="playerScore">
+                <img draggable="false" id="playerPick" class="pick" src="./img/question-mark-svgrepo-com.svg">
+                <div class="score centerText playerScoreDisplay">Player: 0</div>
+            </div>
+            <p>VS</p>
 
+            <div class="computerScore">
+                <img draggable="false" id="computerPick" class="pick" src="./img/question-mark-svgrepo-com.svg">
+                <div class="score centerText computerScoreDisplay">Computer: 0</div>
+            </div>
+        </div>
+        <div class="buttons">
+            <img id="rock" draggable="false" class="hoverButton eventListener" src="./img/rock-svgrepo-com.svg" class="button">
+            <img id="paper" draggable="false" class="hoverButton eventListener" src="./img/paper-svgrepo-com.svg" class="button">
+            <img id="scissors" draggable="false" class="hoverButton eventListener" src="./img/scissors-svgrepo-com.svg" class="button">
+        </div>
+        <div class="footer centerText">Made by <a href="https://github.com/PBalazs0517" target="blank_">PBalazs</a></div>
+        <div id="popup" class="popup">
+            <p id="result">Place Holder</p>
+            <button id="button" class="button" type="reset">PLAY AGAIN</button>
+        </div>
     </body>
 </html>

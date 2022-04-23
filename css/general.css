@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+
+::selection {
+    background-color: rgb(0, 248, 165);
+    color: #fff;
+}
+
+* {
+    font-family: 'Chakra Petch';
+    color: rgb(0, 255, 171);
+    text-shadow: 0 0 20px rgb(0, 255, 171);
+}
+
+html {
+    background-color: rgb(34, 34, 41);
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+}
+
+.title {
+
+    height: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 280%;
+    background-color: rgb(15, 15, 16);
+    font-weight: 800;
+    padding: 1%;
+}
+
+
+.centerText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.instruction {
+    margin-top: 3%;
+    width: 100%;
+}
+.outcome {
+    margin: 0;
+}
+
+.scoreDisplay {
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    gap: 50px;
+}
+
+.playerScore {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 150px;
+    font-size: 130%;
+}
+
+.computerScore {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 150px;
+    font-size: 130%;
+}
+
+
+.buttons {
+    margin-top: 3%;
+    min-height: 30%;
+    height: fit-content;
+    display: flex;
+    flex-flow: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer {
+    display: flex;
+    height: 5%;
+    margin-top: auto;
+    background-color: rgb(15, 15, 16);
+    background-color: rgb(15, 15, 16);
+    font-weight: 800;
+    font-size: 140%;
+    padding: 1%;
+}
+
+a {
+    color: rgb(0, 255, 171);
+    text-decoration: none;
+    margin: 0 0 0 5px;
+}
+
+a::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    bottom: 2%;
+    left: 56%;
+    transform: translate(-50%);
+    background-color: rgb(0, 255, 171);
+    height: 2px;
+    width: 0px;
+    transition: 0.2s;
+    transform-origin: 0% 50%;
+}
+
+a:hover::after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    bottom: 2%;
+    left: 56%;
+    transform: translate(-63%);
+    background-color: rgb(0, 255, 171);
+    height: 2px;
+    width: 80px;
+}
+
+p {
+    font-size: 300%;
+    font-weight: 800;
+}
+
+img {
+    border: rgb(0, 255, 171) solid 3px;
+    border-radius: 5px;
+    min-height: 100px;
+    min-width: 100px;
+    max-height: 200px;
+    max-width: 200px;
+    flex:auto;
+}
+
+.hoverButton {
+    transition: 0.3s;
+}
+
+.hoverButton:hover {
+    transform: scale(110%);
+    box-shadow: 0 0 20px rgb(0, 255, 171); 
+}
+
+.popup {
+    display: none;
+    flex-flow: column;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    width: 450px;
+    background-color: rgb(39, 39, 42);
+    border: 4px rgb(0, 255, 171) solid;
+    border-radius: 10px; 
+}
+
+button {
+    height: 10%;
+    width: 40%;
+    background-color: rgb(15, 15, 16);
+    border: 3px solid rgb(0, 255, 171);
+    border-radius: 10px;
+}
