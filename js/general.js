@@ -1,12 +1,10 @@
 let computerSelect = "";
 let playerSelect = "";
-let score = 0;
-//let isWonIsLostIsDraw = "";
+let playerScore = 0;
+let computerScore = 0;
 
 function playerChoose() {
-
     let isValid = 1;
-
     while (isValid == 1) {
         let sItem = prompt("Rock, paper or scissors?")
         sItem = sItem.toLocaleLowerCase(); 
@@ -35,53 +33,67 @@ function computerPlay() {
     return computerSelect;
 }
 
-//function scoreCounter() {
-//    console.log(isWonIsLostIsDraw);
-//    if (isWonIsLostIsDraw == "won") {
-//        score += 1;
-//        return score;
-//    }
-//}
-
 function playRound() {
     if ( playerSelect == computerSelect) {
         console.log("Draw: " +  playerSelect + " is equal to " + computerSelect + ".");
     } else if ( playerSelect == "paper" && computerSelect == "scissors") {
         console.log("Lost: paper is weaker than scissors");
+        computerScore += 1;
+        return computerScore;
     } else if ( playerSelect == "paper" && computerSelect == "rock" ) {
         console.log("Won: paper is stronger than rock");
-        score += 1;
-        return score;
+        playerScore += 1;
+        return playerScore;
     } else if ( playerSelect == "rock" && computerSelect == "scissors" ) {
         console.log("Won: rock is stronger than scissors"); 
-        score += 1;
-        return score;
+        playerScore += 1;
+        return playerScore;
     }  else if ( playerSelect == "rock" && computerSelect == "paper" ) {
-        console.log("Lost: rock is weaker than paper"); 
+        console.log("Lost: rock is weaker than paper");
+        computerScore += 1;
+        return computerScore; 
     } else if ( playerSelect == "scissors" && computerSelect == "paper") {
         console.log("Won: scissors is stronger than paper"); 
-        score += 1;
-        return score;
+        playerScore += 1;
+        return playerScore;
     } else if ( playerSelect == "scissors" && computerSelect == "rock") {
-        return isWonIsLostIsDraw;
+        console.log("Lost: scissors is weaker than rock"); 
+        computerScore += 1;
+        return computerScore;
     } else {
         console.log("Invalid item");
     }
 }
 
+let gameIsNotFinished = true;
+
+function calcEndOfTheGame(){
+    if (playerScore == 5 || computerScore == 5 ) {
+        gameIsNotFinished = false;
+    }
+    return gameIsNotFinished;
+}
+
 function game() {
-    for (let i = 0; i < 5; i++) {
+    while(gameIsNotFinished) {
         playerChoose(); 
         computerPlay();
         playRound();
-        //scoreCounter();
+        calcEndOfTheGame();
     }
-    console.log(score);
-    if (score >= 3) {
-        console.log("Well done YOU won!")
-    } else {
-        console.log("Sorry YOU lost! Try again!")
+
+    console.log("P: " + playerScore);
+    console.log("C: " + computerScore);
+
+    if (playerScore == 5) {
+        console.log("Well done YOU won!");
+    } 
+    if (computerScore == 5) {
+        console.log("Sorry YOU lost! Try again!");
     };
-    score -= score;
-    return score;
+
+    gameIsNotFinished = true;
+    playerScore -= playerScore;
+    computerScore -= computerScore;
+    return [playerScore, computerScore, gameIsNotFinished];
 }
